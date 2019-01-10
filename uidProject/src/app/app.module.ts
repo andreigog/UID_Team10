@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { LoginPatientComponent } from './login-patient/login-patient.component';
 import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
 import { RouterModule, Routes } from '@angular/router';
+import {DocHomeComponent} from './doc-home/doc-home.component';
+import {DaysoffComponent} from './daysoff/daysoff.component';
 
 const appRoutes: Routes = [
   {
@@ -19,7 +21,9 @@ const appRoutes: Routes = [
   declarations: [
     AppComponent,
     LoginPatientComponent,
-    LoginDoctorComponent
+    LoginDoctorComponent,
+    DocHomeComponent,
+    DaysoffComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<div class="container">
+  <img src="assets/inima.png">
+  <h1>Welcome, Doctor!</h1>
+</div>
+
+<div>
+  <table>
+    <tbody>
+    <tr *ngFor="let u of patients">
+      <td>{{u}}<button class="button" (click)="examine(u)">Examine</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

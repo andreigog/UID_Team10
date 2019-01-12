@@ -36,7 +36,7 @@ const appRoutes: Routes = [
     component: DaysoffComponent
   },
   {
-    path: 'monitored',
+    path: 'monitoredData',
     component: MonitoredDataComponent
   },
   {
@@ -50,6 +50,10 @@ const appRoutes: Routes = [
   {
     path: 'review',
     component: ReviewComponent
+  },
+  {
+    path: 'gdpr',
+    component: GdprConsentComponent
   },
   {
     path: '',
@@ -66,7 +70,7 @@ const appRoutes: Routes = [
     DocHomeComponent,
     DaysoffComponent,
     GdprConsentComponent,
-    MonitoredDataComponent
+    MonitoredDataComponent,
     ReportComponent,
     MonitoreddataComponent,
     ReviewComponent

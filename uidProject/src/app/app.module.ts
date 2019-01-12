@@ -14,6 +14,19 @@ const appRoutes: Routes = [
     path: 'loginDoctor',
     component: LoginDoctorComponent,
     data: { title: 'Product List' }
+  },
+  {
+    path: 'docHome',
+    component: DocHomeComponent
+  },
+  {
+    path: 'daysoff',
+    component: DaysoffComponent
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   }
 ]
 

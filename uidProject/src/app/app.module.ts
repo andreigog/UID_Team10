@@ -8,6 +8,10 @@ import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
 import { RouterModule, Routes } from '@angular/router';
 import {DocHomeComponent} from './doc-home/doc-home.component';
 import {DaysoffComponent} from './daysoff/daysoff.component';
+import { GdprConsentComponent } from './gdpr-consent/gdpr-consent.component';
+import { MonitoredDataComponent } from './monitored-data/monitored-data.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   {
@@ -24,6 +28,10 @@ const appRoutes: Routes = [
     component: DaysoffComponent
   },
   {
+    path: 'monitored',
+    component: MonitoredDataComponent
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -36,11 +44,15 @@ const appRoutes: Routes = [
     LoginPatientComponent,
     LoginDoctorComponent,
     DocHomeComponent,
-    DaysoffComponent
+    DaysoffComponent,
+    GdprConsentComponent,
+    MonitoredDataComponent
   ],
   imports: [
+    AngularFontAwesomeModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],

@@ -1,0 +1,31 @@
+<div class="topnav">
+  <i class="fas fa-heartbeat"></i>
+  <span>View Monitored Data For Patient</span>
+  <a href="#contact">Contact</a>
+  <a href="#about">About</a>
+  <a href="#appointments">Appointments</a>
+  <a href="#map">Map</a>
+  <a class="active" href="#home">Home</a>
+</div>
+<div>
+  <div class="row">
+  <div class="col-sm-4">
+  <div>
+    <span class="fields">Beats per minute:</span>
+    <input class="center" [(ngModel)]="monitored.beatsMin" placeholder="Beats/min"/> 
+  </div>
+  <div>
+    <span class="fields">Blood pressure:</span>
+    <input class="center" [(ngModel)]="monitored.bloodPres" placeholder="Blood Pressure"/> 
+  </div>
+  <div>
+    <span class="fields">Nr steps/day:</span>
+    <input class="center"[(ngModel)]="monitored.nrSteps" placeholder="Steps/Day"/> 
+  </div>
+  </div>
+  <div class="col-sm-4">
+  <img src="assets/heart.png" alt="Flowers in Chania">
+  </div>  
+</div>
+
+</div>

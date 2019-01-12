@@ -1,0 +1,57 @@
+.topnav {
+    background-color: #EBEBEB;
+    overflow: hidden;
+    border-radius: 5px;
+    color: black;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav i {
+    text-align: center;
+    padding: 10px 10px;
+    text-decoration: none;
+    font-size: 25px;
+    color : #FF0D00;
+  }
+  
+  .topnav i:hover {
+    color: black;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #FF0D00;
+    color: black;
+  }
+  .fields{
+    font-size: 30px;
+    font-weight: bold;
+
+  }
+  .center{
+    margin: auto;
+    width: 30%;
+    border: 3px solid red;
+    padding: 10px;
+    justify-content: center;
+    display: flex;
+    margin-left:20%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+  }

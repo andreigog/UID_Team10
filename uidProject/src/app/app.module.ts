@@ -11,12 +11,18 @@ import {DocHomeComponent} from './doc-home/doc-home.component';
 import {DaysoffComponent} from './daysoff/daysoff.component';
 import {ReportComponent} from './report/report.component';
 import {MonitoreddataComponent} from './monitoreddata/monitoreddata.component';
+import {ReviewComponent} from './review/review.component';
 
 const appRoutes: Routes = [
   {
     path: 'loginDoctor',
     component: LoginDoctorComponent,
     data: { title: 'Product List' }
+  },
+  {
+    path: 'loginPatient',
+    component: LoginPatientComponent,
+    data: {title: 'Product List'}
   },
   {
     path: 'docHome',
@@ -35,6 +41,10 @@ const appRoutes: Routes = [
     component: MonitoreddataComponent
   },
   {
+    path: 'review',
+    component: ReviewComponent
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -49,7 +59,8 @@ const appRoutes: Routes = [
     DocHomeComponent,
     DaysoffComponent,
     ReportComponent,
-    MonitoreddataComponent
+    MonitoreddataComponent,
+    ReviewComponent
   ],
   imports: [
     BrowserModule,

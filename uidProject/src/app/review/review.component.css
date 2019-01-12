@@ -1,0 +1,60 @@
+.container{
+  position: fixed;
+  left:0px;
+  background: lightgray;
+  width: 1910px;
+  margin-right: 1500px;
+}
+#title{
+  position: fixed;
+  top: 170px;
+  left: 280px;
+}
+.bd{
+  background-color: lightgray;
+  position: fixed;
+  width: 98%;
+  height: 70%;
+  margin-top: 230px;
+  left:20px;
+}
+.checked {
+  color: orange;
+}
+
+#s1, #s2, #s3, #s4, #s5 {
+  font-size: 50px;
+}
+.btn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px;
+  margin: 10px 0px;
+  border: none;
+  width: 50%;
+  height: 30%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+
+.btn:hover {
+  background-color: #45a049;
+}
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 50px;
+  height: 300px; /* Should be removed. Only for demonstration */
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+
+}
+

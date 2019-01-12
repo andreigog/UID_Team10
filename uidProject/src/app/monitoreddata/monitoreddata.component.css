@@ -1,0 +1,22 @@
+.container{
+  position: fixed;
+  left:0px;
+  background: lightgray;
+  width: 1910px;
+  margin-right: 1500px;
+}
+#title{
+  position: fixed;
+  top: 150px;
+  left: 280px;
+}
+.features{
+  /*bottom:100px;*/
+  /*left: 100px;*/
+  position: fixed;
+  margin-top: 250px;
+  margin-right: 1000px;
+}
+textarea{
+  color: red;
+}

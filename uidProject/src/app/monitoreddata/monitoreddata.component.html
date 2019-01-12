@@ -1,0 +1,20 @@
+<div class="container">
+  <img src="assets/inima.png">
+  <h1 id="title">View monitored data for
+    <select (change)="choose($event)">
+      <option *ngFor="let p of patients" value="{{p}}" >{{p}}</option>
+    </select>
+  </h1>
+</div>
+
+<div class="features">
+  <h1>
+    <b>Beats per minute: <textarea rows="1" cols="4" [(ngModel)]="beatsValue"> 120</textarea></b>
+  </h1><br>
+  <h1>
+    <b>Blood pressure: <textarea rows="1" cols="11" [(ngModel)]="pressureValue"> 120 with 80</textarea></b>
+  </h1><br>
+  <h1 >
+    <b>Number of steps/day: <textarea rows="1" cols="6" [(ngModel)]="stepsValue"> 2500</textarea></b>
+  </h1>
+</div>

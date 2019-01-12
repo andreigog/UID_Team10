@@ -1,0 +1,38 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="container">
+  <img src="assets/inima.png">
+  <h1 id="title">Review your doctors!</h1>
+</div>
+<div class="bd">
+  <div class="row">
+    <div class="column" >
+      <h2><u>Choose your doctor</u></h2><br><br>
+      <h2><select (change)="chooseDoc($event)">-->
+        <option *ngFor="let p of docs" value="{{p}}">{{p}}</option>
+        </select></h2><br><br>
+        <h2><select (change)="chooseDom($event)">
+        <option *ngFor="let d of domains" value="{{d}}">{{d}}</option>
+        </select></h2><br><br>
+    </div>
+    <div class="column" >
+      <h2><u>Choose the nr of stars</u></h2><br><br>
+      <span ngClass="{{s1}}" id="s1" (click)="change(1)"></span>
+      <span ngClass="{{s2}}" id="s2" (click)="change(2)"></span>
+      <span ngClass="{{s3}}" id="s3" (click)="change(3)"></span>
+      <span ngClass="{{s4}}" id="s4" (click)="change(4)"></span>
+      <span ngClass="{{s5}}" id="s5" (click)="change(5)"></span><br><br><br>
+      <h2>Comment</h2>
+      <textarea rows="5" cols="50" (change)="chooseCom($event)">
+
+      </textarea>
+    </div>
+    <div class="column" >
+      <h2><u>Finish your review</u></h2><br><br>
+      <button class="btn" (click)="rate()">Rate!</button>
+      <div class="alert alert-success" *ngIf="rated;">
+        <!--Thank you for your review!-->
+        {{message}}
+      </div>
+    </div>
+  </div>
+</div>

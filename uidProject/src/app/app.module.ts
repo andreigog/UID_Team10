@@ -1,29 +1,31 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { LoginPatientComponent } from './login-patient/login-patient.component';
-import { LoginDoctorComponent } from './login-doctor/login-doctor.component';
-import { RouterModule, Routes } from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {LoginPatientComponent} from './login-patient/login-patient.component';
+import {LoginDoctorComponent} from './login-doctor/login-doctor.component';
+import {RouterModule, Routes} from '@angular/router';
 import {DocHomeComponent} from './doc-home/doc-home.component';
 import {DaysoffComponent} from './daysoff/daysoff.component';
-import { GdprConsentComponent } from './gdpr-consent/gdpr-consent.component';
-import { MonitoredDataComponent } from './monitored-data/monitored-data.component';
-import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {GdprConsentComponent} from './gdpr-consent/gdpr-consent.component';
+import {MonitoredDataComponent} from './monitored-data/monitored-data.component';
+import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import {ReportComponent} from './report/report.component';
 import {MonitoreddataComponent} from './monitoreddata/monitoreddata.component';
 import {ReviewComponent} from './review/review.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
+import {MapComponent} from './map/map.component';
+import {AgmCoreModule} from '@agm/core';
 
 const appRoutes: Routes = [
   {
     path: 'loginDoctor',
     component: LoginDoctorComponent,
-    data: { title: 'Product List' }
+    data: {title: 'Product List'}
   },
   {
     path: 'loginPatient',
@@ -59,11 +61,15 @@ const appRoutes: Routes = [
     component: GdprConsentComponent
   },
   {
+    path: 'map',
+    component: MapComponent
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
   }
-]
+];
 
 @NgModule({
   declarations: [
@@ -76,7 +82,8 @@ const appRoutes: Routes = [
     MonitoredDataComponent,
     ReportComponent,
     MonitoreddataComponent,
-    ReviewComponent
+    ReviewComponent,
+    MapComponent
   ],
   imports: [
     AngularFontAwesomeModule,
@@ -85,11 +92,18 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    AgmCoreModule.forRoot({
+      // please get your own API key here:
+      // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
+      apiKey: 'AIzaSyBLIjjbs8HVnGM2nxmngm6Rcx-soUgWsks'
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

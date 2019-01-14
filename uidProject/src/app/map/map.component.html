@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="row">
+  <div class="topnav">
+    <img src="assets/inima.png" width="10%" alt="Flowers in Chania">
+    <span class="dimension">Hospitals & doctors map</span>
+  </div>
+</div>
+
+<div class="modal-body row">
+  <div class="col-md-6">
+    <div class="mp">
+      <agm-map
+        [latitude]="lat"
+        [longitude]="lng"
+        [zoom]="zoom"
+        [disableDefaultUI]="false"
+        [zoomControl]="false"
+        (mapClick)="mapClicked($event)">
+
+        <agm-marker
+          *ngFor="let m of markers; let i = index"
+          (markerClick)="clickedMarker(m.label, i, m)"
+          [latitude]="m.lat"
+          [longitude]="m.lng"
+          [label]="m.label"
+          [markerDraggable]="m.draggable"
+          (dragEnd)="markerDragEnd(m, $event)">
+
+          <agm-info-window [isOpen]="show">
+            <strong>{{message}}</strong>
+          </agm-info-window>
+
+        </agm-marker>
+
+        <agm-circle [latitude]="lat + 0.3" [longitude]="lng"
+                    [radius]="5000"
+                    [fillColor]="'red'"
+                    [circleDraggable]="true"
+                    [editable]="true">
+        </agm-circle>
+
+      </agm-map>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <!--<h3><select (change)="chooseDoc($event)">&ndash;&gt;-->
+    <!--<option *ngFor="let p of docs" value="{{p}}">{{p}}</option>-->
+    <!--</select></h3><br>-->
+    <!--<h3><select (change)="chooseDom($event)">-->
+    <!--<option *ngFor="let d of domains" value="{{d}}">{{d}}</option>-->
+    <!--</select></h3><br><br>-->
+    <div class="row" style="margin-left: 10%">
+      <mat-form-field>
+        <mat-label>Select a doctor (required)</mat-label>
+        <h3><select matNativeControl required [formControl]="selectFormControl" (change)="chooseDoc($event)">
+          <option label="Doctors"></option>
+          <option *ngFor="let p of docs" value="{{p}}">{{p}}</option>
+        </select></h3>
+        <mat-error *ngIf="selectFormControl.hasError('required')">
+          This field is required
+        </mat-error>
+        <mat-hint>Choose the doctor you want to search for</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="row" style="margin-left: 10%; margin-top: 10%">
+      <mat-form-field>
+        <mat-label>Select a domain (required)</mat-label>
+        <h3><select matNativeControl required [formControl]="selectFormControl" (change)="chooseDom($event)">
+          <option label="Domain"></option>
+          <option *ngFor="let d of domains" value="{{d}}">{{d}}</option>
+        </select></h3>
+        <mat-error *ngIf="selectFormControl.hasError('required')">
+          This field is required
+        </mat-error>
+        <mat-hint>Choose the domain of the chosen doctor</mat-hint>
+      </mat-form-field>
+    </div>
+  </div> <br><br><br>
+  <div class="row" style="margin-left: 56%; margin-top: 20%; width:75%;">
+    <button (click)="search()"><i class="fa fa-search"></i> Search </button>
+  </div>
+</div>

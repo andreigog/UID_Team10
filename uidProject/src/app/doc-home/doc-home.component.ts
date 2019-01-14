@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {InfoService} from '../service/info.service';
 
 @Component({
   selector: 'app-doc-home',
@@ -8,11 +9,13 @@ import {Component, OnInit} from '@angular/core';
 export class DocHomeComponent implements OnInit {
 
   patients: string[];
+  doc: string;
 
-  constructor() {
+  constructor(private info: InfoService) {
   }
 
   ngOnInit() {
+    this.doc = this.info.docUser;
     this.patients = [
       'John Doe', 'Harry Poter', 'Jane Doe', 'Ionica Tedica', 'Ioshka Patroshka', 'Cutie Patootie'
     ];

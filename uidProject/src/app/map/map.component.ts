@@ -16,6 +16,8 @@ export class MapComponent implements OnInit {
   domains: string[];
   doc: string;
   dom: string;
+  selected: boolean;
+  temp: number;
 
   // initial center position for the map
   lat = -16.50613237613465;
@@ -46,6 +48,8 @@ export class MapComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.selected = false;
+    this.temp = 0;
     this.docs = this.info.docs;
     this.domains = this.info.domain;
     this.selectFormControl = new FormControl('', Validators.required);
@@ -53,19 +57,27 @@ export class MapComponent implements OnInit {
 
   chooseDoc(event: any) {
     this.doc = event.target.value;
+    this.temp += 1;
   }
 
   chooseDom(event: any) {
     this.dom = event.target.value;
+    this.temp += 1;
   }
 
   search() {
-    this.markers.push({
-      lat: -16.49794913827828,
-      lng: -151.75292587841795,
-      draggable: true,
-      label: this.doc.substring(1, this.doc.length) + ' works here'
-    });
+    if (this.temp !== 2) {
+      this.selected = true;
+    } else {
+      this.selected = false;
+      this.temp = 0;
+      this.markers.push({
+        lat: -16.49794913827828,
+        lng: -151.75292587841795,
+        draggable: true,
+        label: this.doc.substring(1, this.doc.length) + ' works here'
+      });
+    }
   }
 
   /*FOR GGL MAPS*/

@@ -20,6 +20,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import {MapComponent} from './map/map.component';
 import {AgmCoreModule} from '@agm/core';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 const appRoutes: Routes = [
   {
@@ -65,6 +66,10 @@ const appRoutes: Routes = [
     component: MapComponent
   },
   {
+    path: 'appointment',
+    component: AppointmentComponent
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -83,7 +88,8 @@ const appRoutes: Routes = [
     ReportComponent,
     MonitoreddataComponent,
     ReviewComponent,
-    MapComponent
+    MapComponent,
+    AppointmentComponent
   ],
   imports: [
     AngularFontAwesomeModule,

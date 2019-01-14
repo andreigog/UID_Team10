@@ -1,16 +1,35 @@
-.container{
-  position: absolute;
-  left:0px;
-  background: lightgray;
-  width: 1910px;
-  margin-right: 1500px;
-}
-h1{
-  position: absolute;
-  top: 100px;
-  left: 280px;
+/*.container{*/
+  /*position: absolute;*/
+  /*left:0px;*/
+  /*background: lightgray;*/
+  /*width: 1910px;*/
+  /*margin-right: 1500px;*/
+/*}*/
+/*h1{*/
+  /*position: absolute;*/
+  /*top: 100px;*/
+  /*left: 280px;*/
+/*}*/
+.topnav a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
+.topnav i {
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color : #FF0D00;
+}
+
+.topnav i:hover {
+  color: black;
+}
 table {
   position: absolute;
   /* top:350px; */

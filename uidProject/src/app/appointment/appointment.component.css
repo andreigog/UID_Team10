@@ -1,3 +1,24 @@
+.topnav a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav i {
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #FF0D00;
+}
+
+.topnav i:hover {
+  color: black;
+}
+
 /*CALENDAR*/
 * {
   box-sizing: border-box;
@@ -99,41 +120,6 @@ body {
   }
 }
 
-
-.comment {
-  position: absolute;
-  /*background: #3e8e41;*/
-  top: 400px;
-  right: 350px;
-}
-
-input {
-  height: 70px;
-  width: 290px;
-}
-
-input[type=text]:focus {
-  border: 3px solid #555;
-
-}
-
-.topnav a {
-  float: right;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav i {
-  text-align: center;
-  padding: 10px 10px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #FF0D00;
-}
-
-.topnav i:hover {
-  color: black;
-}
+/*.days li:hover {*/
+  /*background-color: wheat;*/
+/*}*/

@@ -15,6 +15,9 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {ReportComponent} from './report/report.component';
 import {MonitoreddataComponent} from './monitoreddata/monitoreddata.component';
 import {ReviewComponent} from './review/review.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatInputModule} from '@angular/material/input';
 
 const appRoutes: Routes = [
   {
@@ -81,7 +84,10 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

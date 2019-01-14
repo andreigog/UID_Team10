@@ -1,30 +1,30 @@
 <div class="topnav">
-  <i class="fas fa-heartbeat"></i>
-  <span>View Monitored Data For Patient</span>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-  <a href="#appointments">Appointments</a>
-  <a href="#map">Map</a>
-  <a class="active" href="#home">Home</a>
+  <img src="assets/inima.png" width= "10%"alt="Flowers in Chania">
+  <span class="dimension">View Monitored Data For Patient</span> 
+  <select (change)="choose($event)">
+    <option *ngFor="let p of patients" value="{{p}}" >{{p}}</option>
+  </select>
 </div>
+<br>
+<br>
 <div>
   <div class="row">
   <div class="col-sm-4">
   <div>
     <span class="fields">Beats per minute:</span>
-    <input class="center" [(ngModel)]="monitored.beatsMin" placeholder="Beats/min"/> 
+    <input class="center" [(ngModel)]="beatsValue" placeholder="Beats/min"/> 
   </div>
   <div>
     <span class="fields">Blood pressure:</span>
-    <input class="center" [(ngModel)]="monitored.bloodPres" placeholder="Blood Pressure"/> 
+    <input class="center" [(ngModel)]="pressureValue" placeholder="Blood Pressure"/> 
   </div>
   <div>
     <span class="fields">Nr steps/day:</span>
-    <input class="center"[(ngModel)]="monitored.nrSteps" placeholder="Steps/Day"/> 
+    <input class="center"[(ngModel)]="stepsValue" placeholder="Steps/Day"/> 
   </div>
   </div>
-  <div class="col-sm-4">
-  <img src="assets/heart.png" alt="Flowers in Chania">
+  <div class="col-sm-6">
+  <img src="assets/heart.png" width="100%" alt="Flowers in Chania">
   </div>  
 </div>
 

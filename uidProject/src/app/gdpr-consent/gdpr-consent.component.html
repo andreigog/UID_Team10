@@ -1,18 +1,41 @@
-<div>
+<div class="row">
+<div class="topnav">
+    <img width= "10%" src="assets/inima.png">
+    <span class="dimension">GDPR Regulations </span> 
+  </div>
+</div>
+
+
+<div class="row spacing" style="background-color:#EBEBEB">
     By accepting the GDPR regulations you will give your consent that the following data will be processed and used
     for medical and research purposes: 
+    <p>
     Name
-    Address
-    Past medical records
-    Medical data ( allergies etc.)
+    </p>
+    <p>Address
+        </p>
+    <p>Past medical records</p>
+    <p>Medical data ( allergies etc.)</p>
     By toggling the button below you accept the terms and conditions mentioned. You can always change your choice by visiting this page and toggling of the button, or ask any questions about how your data is being processed by our medical staff: 
 </div>
-<div>
-Consent regarding GDPR Regulations
-</div>
-<label class="switch">
-    <input type="checkbox" checked>
-    <span class="slider round"></span>
+<div class="center">
+<div class="row">
+<div class="col-sm-9"><span class="mare">Consent regarding GDPR Regulations</span></div>
+<div class="col-sm-3"><label class="switch">
+        <input type="checkbox" (click)="switch()" >
+        <span class="slider round"></span>
 </label>
-<img  src="assets/gdpr.jpg" alt="Flowers in Chania">
+<div class="row">
+<div class="alert alert-success"  *ngIf="rated;">
+        <!--Thank you for your review!-->
+        {{message}}
+      </div>
+    </div>
+</div>
+</div>
+</div>
+<div class="row">
+    <div class="row"><img class="gdpr" src="assets/gdpr.jpg" alt="Flowers in Chania"></div>
+    <div class="row gdpr2 color">GDPR regulations</div>
+</div>
 <span></span>

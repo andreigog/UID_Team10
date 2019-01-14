@@ -1,11 +1,14 @@
-<div class="container">
-  <img src="assets/inima.png">
-  <h1>Generate report for an appointment!</h1>
+<div class="row">
+<div class="topnav">
+  <img src="assets/inima.png" width= "10%"alt="Flowers in Chania">
+  <span class="dimension">Select your days off!</span>
+</div>
 </div>
 
+<div class="row">
 <div class="klm">
   <div class="row">
-    <div class="column" >
+    <div class="col-sm-4" >
       <h2>Patient</h2>
       <select (change)="setPatient($event)">
         <option *ngFor="let p of patients" value="{{p}} " id="pati "#pati>{{p}}</option>
@@ -14,17 +17,17 @@
       <select (change)="setDate($event)">
         <option *ngFor="let d of dates">{{d}}</option>
       </select> <br><br>
-      <button class="btn btn-success" style="width: 150px; height: 50px" (click)="pat()">Save</button>
-      <button class="btn" style="width: 150px; height: 50px">Cancel</button>
+      <button class="btn btn-success" (click)="pat()">Save</button>
+      <button class="btn"  >Cancel</button>
     </div>
-    <div class="column" >
+    <div class="col-sm-4" >
       <h2>Recommendations</h2>
-      <textarea rows="10" cols="50" (change)="setRecommendation($event)">
+      <textarea (change)="setRecommendation($event)">
         - Not too much physical effort.
         - No alcohol.
       </textarea>
     </div>
-    <div class="column" >
+    <div class="col-sm-4" >
       <h2>Medication</h2>
       <div class="meds">
         <button  class="bn" style="background-color: lavenderblush;" (click)="addMed('Algocalmin')">Algocalmin</button><br>
@@ -34,6 +37,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 

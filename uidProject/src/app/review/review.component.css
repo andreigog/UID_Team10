@@ -2,8 +2,8 @@
   position: fixed;
   left:0px;
   background: lightgray;
-  width: 1910px;
-  margin-right: 1500px;
+  width: 80%;
+  /* margin-right: 1500px; */
 }
 #title{
   position: fixed;
@@ -11,19 +11,24 @@
   left: 280px;
 }
 .bd{
+  margin-top:5%;
   background-color: lightgray;
-  position: fixed;
-  width: 98%;
-  height: 70%;
-  margin-top: 230px;
-  left:20px;
+  width: 100%;
+  align-content: center;
 }
 .checked {
   color: orange;
 }
 
 #s1, #s2, #s3, #s4, #s5 {
-  font-size: 50px;
+  font-size: 30px;
+  cursor: pointer;
+}
+.gigi{
+  width: 80%;
+}
+.gigel{
+  margin-left: 5%;
 }
 .btn {
   background-color: #4CAF50;
@@ -32,7 +37,6 @@
   margin: 10px 0px;
   border: none;
   width: 50%;
-  height: 30%;
   border-radius: 3px;
   cursor: pointer;
   font-size: 17px;
@@ -46,7 +50,6 @@
   float: left;
   width: 33.33%;
   padding: 50px;
-  height: 300px; /* Should be removed. Only for demonstration */
 
 }
 

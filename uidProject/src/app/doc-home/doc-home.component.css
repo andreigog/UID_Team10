@@ -13,8 +13,8 @@ h1{
 
 table {
   position: absolute;
-  top:350px;
-  left:90px;
+  /* top:350px; */
+  /* left:90px; */
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 50%;
@@ -34,10 +34,14 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+.spacing{
+  margin-top: 10%;
+}
 button{
   position: absolute;
-  left:750px;
-  width: 200px;
+  left:100%;
+  margin-left:5%;
+  width: 40%;
   display: inline-block;
   cursor: pointer;
   text-align: center;

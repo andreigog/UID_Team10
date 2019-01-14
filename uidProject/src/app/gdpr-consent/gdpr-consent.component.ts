@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GdprConsentComponent implements OnInit {
 
+  rated:boolean;
+  message:string;
   constructor() { }
 
   ngOnInit() {
+    this.rated=false;
+  }
+  switch(){
+    this.rated=true;
+    this.message="You have succesfully modified gdpr settings";
   }
 
 }

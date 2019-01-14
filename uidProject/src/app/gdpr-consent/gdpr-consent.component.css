@@ -57,9 +57,42 @@
   .slider.round:before {
     border-radius: 50%;
   }
-  img {
-    width:"5%";  
-    right: 100px;
-bottom: 100px;
-position: absolute;
+  .gdpr {
+    width:10%;
+    right: 5%;
+    bottom: 5%;
+    position: absolute;
+  }
+  .gdpr2{
+    right: 7%;
+    bottom: 2%;
+    position: absolute;
+  }
+  .color{
+    color: black;
+    font-weight: bold; 
+  }
+  .spacing{
+    margin-top: 5%;
+    color:black;
+    font-weight: bold;
+    font-size:15px;
+  }
+  p{
+    color:black;
+    font-weight: bold;
+    font-size:15px;
+    margin-left:15%;
+    margin-top:1%;
+  }
+  .mare{
+    color:black;
+    font-weight: bold;
+    font-size:20px;
+  }
+  .center{
+    margin-top:20px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
   }

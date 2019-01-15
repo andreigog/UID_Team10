@@ -90,6 +90,13 @@
     font-weight: bold;
     font-size:20px;
   }
+  .center2{
+    margin-top:20px;
+    align-content: center;
+    justify-content: center;
+    display: flex;
+    width: 40%;
+  }
   .center{
     margin-top:20px;
     align-content: center;

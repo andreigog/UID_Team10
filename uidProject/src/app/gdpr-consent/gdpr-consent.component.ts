@@ -15,8 +15,8 @@ export class GdprConsentComponent implements OnInit {
     this.rated=false;
   }
   switch(){
-    this.rated=true;
-    this.message="You have succesfully modified gdpr settings";
+    this.rated=!this.rated;
+    this.message="You agree with the processing of data related to gdpr terms";
   }
 
 }

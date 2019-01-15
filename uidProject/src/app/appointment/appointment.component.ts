@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {InfoService} from '../service/info.service';
 import {Doctor} from '../service/doctor';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-appointment',
@@ -25,10 +26,21 @@ export class AppointmentComponent implements OnInit {
   selectedHour:any;
   hour:any;
 
-  constructor(private info: InfoService) {
+  constructor(private info: InfoService,private snackBar: MatSnackBar) {
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 10000,
+      direction: 'ltr',
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
   }
 
   ngOnInit() {
+    if(this.info.messagePrescription!=null){
+    this.openSnackBar("You have a new prescription with the following specs: "+this.info.messagePrescription,"");}
     this.hours=['12 AM',"1 PM","2 PM","3 PM","4 PM","5 PM","6 PM"]
     this.selected = false;
     this.done = false;

@@ -58,6 +58,8 @@ export class ReportComponent implements OnInit {
       this.message = 'The appointment report for patient ' + this.selectedPatient+
       ' from: '+this.selectedDate + ' has been saved with the following notes '+
       this.rec+ ' and the follwing medication: '+this.meds;
+      this.info.messagePrescription=this.message;
+
   }
 
 }

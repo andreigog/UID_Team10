@@ -19,6 +19,7 @@ export class InfoService {
   docUser = 'doctor';
   patUser = 'patient';
   pass = '1234';
+  messagePrescription;
 
   filteredDocs: Doctor[];
 

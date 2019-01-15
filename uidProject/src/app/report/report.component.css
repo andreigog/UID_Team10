@@ -52,3 +52,10 @@ textarea{
   width: 80%;
   height:30vh;
 }
+.cornel{
+  width:39%;
+  margin-right:2%;
+}
+.srs:hover{
+  background-color:green;
+}

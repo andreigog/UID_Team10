@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {InfoService} from '../service/info.service';
+import {MatSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-review',
@@ -27,7 +28,10 @@ export class ReviewComponent implements OnInit {
   com: string;
   message: string;
 
+  
+
   ngOnInit() {
+    
     this.docs = this.info.docs;
     this.domains = this.info.domain;
     this.s1 = this.unchecked;

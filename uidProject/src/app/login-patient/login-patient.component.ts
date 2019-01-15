@@ -36,8 +36,8 @@ export class LoginPatientComponent implements OnInit {
     if (this.username === 'mockPatient' && this.password === 'mockPass') {
       this.openSnackBar('Login successful!', '');
       localStorage.setItem('username', this.username);
-      localStorage.setItem('role', 'patient');
-      this.router.navigate(['/docHome']);
+      localStorage.setItem('userRole', 'patient');
+      this.router.navigate(['/appointment']);
     } else {
       this.openSnackBar('Wrong username or password', '');
     }

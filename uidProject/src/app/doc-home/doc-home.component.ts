@@ -9,9 +9,10 @@ import {Router} from '@angular/router';
 })
 export class DocHomeComponent implements OnInit {
 
-  patients: string[];
-  doc: string;
-  patient: string;
+  public patients: any[];
+  public doc: string;
+  public patient: string;
+  public data: any[];
 
   constructor(private info: InfoService,private elementRef: ElementRef,private route:Router) {
   }
@@ -23,14 +24,21 @@ export class DocHomeComponent implements OnInit {
   ngOnInit() {
     this.doc = this.info.docList[0].name;
     this.patients = [
-      'John Doe', 'Harry Potter', 'Jane Doe', 'Ionica Tedica', 'Ioshka Patroshka', 'Cutie Patootie'
+      {"name":"John Doe","color":'red'},
+      {"name":"Harry Potter","color":'green'},
+      {"name":"Jane Doe","color":'yellow'},
+      {"name":"Ionica Tedica","color":'green'},
+      {"name":"Ioshka Patroshka","color":'yellow'},
+      {"name":"Cutie Patootie","color":'yellow'},
+      {"name":"Dor Ian Gor Gan","color":'red'},
     ];
+    this.data=["John Doe", "Harry Potter", "Jane Doe", "Ionica Tedica", "Ioshka Patroshka", "Cutie Patootie", "Dor Ian Gor Gan"];
   }
 
   examine(p: string) {
-    this.info.changeMessage(this.patients.indexOf(p, 0).toString());
+    this.info.changeMessage(this.data.indexOf(p, 0).toString());
     this.route.navigate(['/monitoredData']);
-    alert(p + this.patients.indexOf(p, 0).toString());
+    //alert(p+ this.data.indexOf(p, 0));
   }
 
 }

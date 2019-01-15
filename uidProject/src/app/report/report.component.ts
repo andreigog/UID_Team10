@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {InfoService} from '../service/info.service';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-report',
@@ -14,18 +15,16 @@ export class ReportComponent implements OnInit {
   selectedDate: string;
   rec: string;
   meds: string;
+  message: string;
 
-  constructor(private info: InfoService) {
+  constructor(private info: InfoService,private snackBar: MatSnackBar) {
     this.meds = '';
   }
 
   ngOnInit() {
     this.patients = this.info.patients;
     this.dates = this.info.dates;
-  }
-
-  pat() {
-    alert(this.selectedPatient + ' ' + this.selectedDate + ' ' + this.rec + ' ' + this.meds);
+    this.rec = "- Not too much physical effort.- No alcohol."
   }
 
   setPatient(event: any) {
@@ -42,6 +41,23 @@ export class ReportComponent implements OnInit {
 
   addMed(s: string) {
     this.meds += '\n' + s;
+    this.openSnackBar('Added '+s, '');
+  }
+
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+      direction: 'ltr',
+      horizontalPosition: 'center',
+      verticalPosition: 'bottom'
+    });
+  }
+
+
+  makeapp() {
+      this.message = 'The appointment report for patient ' + this.selectedPatient+
+      ' from: '+this.selectedDate + ' has been saved with the following notes '+
+      this.rec+ ' and the follwing medication: '+this.meds;
   }
 
 }

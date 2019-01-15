@@ -33,7 +33,7 @@ export class DocHomeComponent implements OnInit {
       {"name":"Dor Ian Gor Gan","color":'red'},
     ];
     this.data=["John Doe", "Harry Potter", "Jane Doe", "Ionica Tedica", "Ioshka Patroshka", "Cutie Patootie", "Dor Ian Gor Gan"];
-  }
+  } 
 
   examine(p: string) {
     this.info.changeMessage(this.data.indexOf(p, 0).toString());

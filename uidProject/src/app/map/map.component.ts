@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {InfoService} from '../service/info.service';
 import {FormControl, Validators} from '@angular/forms';
+import {Doctor} from '../service/doctor';
 
 
 @Component({
@@ -12,12 +13,16 @@ export class MapComponent implements OnInit {
   clicked: boolean;
   zoom = 12;
   message: string;
-  docs: string[];
+  docs: Doctor[];
   domains: string[];
   doc: string;
   dom: string;
   selected: boolean;
   temp: number;
+
+  docSelected: boolean;
+  domSelected: boolean;
+
 
   // initial center position for the map
   lat = -16.50613237613465;
@@ -43,6 +48,7 @@ export class MapComponent implements OnInit {
     }
   ];
   private selectFormControl: FormControl;
+  flag: boolean;
 
   constructor(private info: InfoService) {
   }
@@ -50,26 +56,35 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     this.selected = false;
     this.temp = 0;
-    this.docs = this.info.docs;
+    this.docs = this.info.filteredDocs;
     this.domains = this.info.domain;
     this.selectFormControl = new FormControl('', Validators.required);
+    this.docSelected = false;
+    this.domSelected = false;
+    this.flag = false;
   }
 
   chooseDoc(event: any) {
     this.doc = event.target.value;
     this.temp += 1;
+    this.docSelected = true;
   }
 
   chooseDom(event: any) {
     this.dom = event.target.value;
     this.temp += 1;
+    this.info.performfilter(this.dom);
+    this.docs = this.info.filteredDocs;
+    this.domSelected = true;
   }
 
   search() {
-    if (this.temp !== 2) {
+    console.log(this.docSelected + ' doc ' +  this.domSelected + ' dom');
+    if (this.docSelected === true  && this.domSelected === true) {
       this.selected = true;
     } else {
       this.selected = false;
+      this.flag = true;
       this.temp = 0;
       this.markers.push({
         lat: -16.49794913827828,
@@ -100,6 +115,7 @@ export class MapComponent implements OnInit {
   markerDragEnd(m: Marker, $event: MouseEvent) {
     console.log('dragEnd', m, $event);
   }
+
 
   reloadPage() {
     window.location.reload();

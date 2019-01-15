@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import {InfoService} from '../service/info.service';
+import {Doctor} from '../service/doctor';
 
 @Component({
   selector: 'app-appointment',
@@ -10,7 +11,7 @@ import {InfoService} from '../service/info.service';
 export class AppointmentComponent implements OnInit {
 
   private selectFormControl: FormControl;
-  docs: string[];
+  docs: Doctor[];
   domains: string[];
   doc: string;
   dom: string;
@@ -27,7 +28,7 @@ export class AppointmentComponent implements OnInit {
     this.selected = false;
     this.done = false;
     this.temp = 0;
-    this.docs = this.info.docs;
+    this.docs = this.info.filteredDocs;
     this.domains = this.info.domain;
     this.selectFormControl = new FormControl('', Validators.required);
   }
@@ -35,11 +36,14 @@ export class AppointmentComponent implements OnInit {
   chooseDoc(event: any) {
     this.doc = event.target.value;
     this.temp += 1;
+    console.log(this.doc.toString());
   }
 
   chooseDom(event: any) {
     this.dom = event.target.value;
     this.temp += 1;
+    this.info.performfilter(this.dom);
+    this.docs = this.info.filteredDocs;
   }
 
   choose(p: number) {

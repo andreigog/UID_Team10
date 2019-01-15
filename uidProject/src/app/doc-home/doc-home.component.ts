@@ -1,5 +1,6 @@
 import {Component, OnInit, ElementRef} from '@angular/core';
 import {InfoService} from '../service/info.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-doc-home',
@@ -10,9 +11,11 @@ export class DocHomeComponent implements OnInit {
 
   patients: string[];
   doc: string;
+  patient: string;
 
   constructor(private info: InfoService,private elementRef: ElementRef) {
   }
+
   ngAfterViewInit() {
     this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'white';
   }
@@ -20,12 +23,14 @@ export class DocHomeComponent implements OnInit {
   ngOnInit() {
     this.doc = this.info.docUser;
     this.patients = [
-      'John Doe', 'Harry Poter', 'Jane Doe', 'Ionica Tedica', 'Ioshka Patroshka', 'Cutie Patootie'
+      'John Doe', 'Harry Potter', 'Jane Doe', 'Ionica Tedica', 'Ioshka Patroshka', 'Cutie Patootie'
     ];
   }
 
   examine(p: string) {
-    alert(p);
+    this.info.changeMessage(this.patients.indexOf(p, 0).toString());
+    this.route.navigate(['/monitoredData']);
+    alert(p + this.patients.indexOf(p, 0).toString());
   }
 
 }

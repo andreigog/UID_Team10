@@ -67,9 +67,9 @@
     <div class="row" style="margin-left: 15%">
       <mat-form-field>
         <mat-label>Select a doctor (required)</mat-label>
-        <h3><select matNativeControl required [formControl]="selectFormControl" (change)="chooseDoc($event)">
-          <option label="Doctors"></option>
-          <option *ngFor="let p of docs" value="{{p}}">{{p}}</option>
+        <h3><select placeholder="Doctors" matNativeControl required [formControl]="selectFormControl" (change)="chooseDoc($event)">
+          <option value="" disabled selected>Doctors</option>
+          <option *ngFor="let p of docs" value="{{p}}">{{p.name}}</option>
         </select></h3>
         <mat-error *ngIf="selectFormControl.hasError('required')">
           This field is required
@@ -80,8 +80,8 @@
     <div class="row" style="margin-left: 15%; margin-top: 10%">
       <mat-form-field>
         <mat-label>Select a domain (required)</mat-label>
-        <h3><select matNativeControl required [formControl]="selectFormControl" (change)="chooseDom($event)">
-          <option label="Domain"></option>
+        <h3><select placeholder="Domain" matNativeControl required [formControl]="selectFormControl" (change)="chooseDom($event)">
+          <option value="" disabled selected>Domains</option>
           <option *ngFor="let d of domains" value="{{d}}">{{d}}</option>
         </select></h3>
         <mat-error *ngIf="selectFormControl.hasError('required')">

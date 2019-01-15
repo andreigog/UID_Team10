@@ -13,7 +13,7 @@ export class DocHomeComponent implements OnInit {
   doc: string;
   patient: string;
 
-  constructor(private info: InfoService,private elementRef: ElementRef) {
+  constructor(private info: InfoService,private elementRef: ElementRef,private route:Router) {
   }
 
   ngAfterViewInit() {

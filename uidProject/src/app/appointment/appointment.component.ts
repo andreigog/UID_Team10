@@ -77,7 +77,7 @@ export class AppointmentComponent implements OnInit {
   makeapp() {
     console.log(this.doc);
     this.temp=3;
-    if (this.temp !== 3) {
+    if (this.doc==null||this.dom==null||this.selectedDate==null||this.hour==null) {
       this.selected = true;
       this.message = 'Please complete all the fields in order to make your appointment!';
     } else {
@@ -101,6 +101,6 @@ export class AppointmentComponent implements OnInit {
   
 
   reloadPage() {
-    window.location.reload();
+    // window.location.reload();
   }
 }

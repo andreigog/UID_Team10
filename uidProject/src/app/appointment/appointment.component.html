@@ -14,11 +14,11 @@
   </dl-date-time-picker> -->
   
 
-  <input [(ngModel)]="selectedDate" [matDatepicker]="myDatepicker">
+  <input placeholder="Date for appointment" [(ngModel)]="selectedDate" [matDatepicker]="myDatepicker">
   <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
   <mat-datepicker #myDatepicker></mat-datepicker>
   <mat-form-field>
-      <mat-label>Select an hour (required)</mat-label>
+      <mat-label>Select an hour</mat-label>
       <h3><select placeholder="Hour" matNativeControl required [formControl]="selectFormControl" [(ngModel)]="hour">
         <option value="" disabled selected>Hours</option>
         <option *ngFor="let hour of hours" value="{{hour}}">{{hour}}</option>
@@ -32,7 +32,7 @@
   <div class="col-md-6">
     <div class="row" style="margin-left: 15%">
         <mat-form-field>
-            <mat-label>Select a domain (required)</mat-label>
+            <mat-label>Select a domain </mat-label>
             <h3><select placeholder="Domain" matNativeControl required [formControl]="selectFormControl" (change)="chooseDom($event)">
               <option value="" disabled selected>Domains</option>
               <option *ngFor="let d of domains" value="{{d}}">{{d}}</option>
@@ -45,7 +45,7 @@
     </div>
     <div class="row" style="margin-left: 15%; margin-top: 10%">
         <mat-form-field>
-            <mat-label>Select a doctor (required)</mat-label>
+            <mat-label>Select a doctor </mat-label>
             <h3><select placeholder="Doctors" matNativeControl required [formControl]="selectFormControl" (change)="chooseDoc($event)">
               <option value="" disabled selected>Doctors</option>
               <option *ngFor="let p of docs" value="{{p.name}}">{{p.name}}</option>

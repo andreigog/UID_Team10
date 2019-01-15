@@ -66,19 +66,6 @@
   <div class="col-md-6">
     <div class="row" style="margin-left: 15%">
       <mat-form-field>
-        <mat-label>Select a doctor (required)</mat-label>
-        <h3><select placeholder="Doctors" matNativeControl required [formControl]="selectFormControl" (change)="chooseDoc($event)">
-          <option value="" disabled selected>Doctors</option>
-          <option *ngFor="let p of docs" value="{{p}}">{{p.name}}</option>
-        </select></h3>
-        <mat-error *ngIf="selectFormControl.hasError('required')">
-          This field is required
-        </mat-error>
-        <mat-hint>Choose the doctor you want to search for</mat-hint>
-      </mat-form-field>
-    </div>
-    <div class="row" style="margin-left: 15%; margin-top: 10%">
-      <mat-form-field>
         <mat-label>Select a domain (required)</mat-label>
         <h3><select placeholder="Domain" matNativeControl required [formControl]="selectFormControl" (change)="chooseDom($event)">
           <option value="" disabled selected>Domains</option>
@@ -88,6 +75,19 @@
           This field is required
         </mat-error>
         <mat-hint>Choose the domain of the chosen doctor</mat-hint>
+      </mat-form-field>
+    </div>
+    <div class="row" style="margin-left: 15%; margin-top: 10%">
+      <mat-form-field>
+        <mat-label>Select a doctor (required)</mat-label>
+        <h3><select placeholder="Doctors" matNativeControl required [formControl]="selectFormControl" (change)="chooseDoc($event)">
+          <option value="" disabled selected>Doctors</option>
+          <option *ngFor="let p of docs" value="{{p}}">{{p.name}}</option>
+        </select></h3>
+        <mat-error *ngIf="selectFormControl.hasError('required')">
+          This field is required
+        </mat-error>
+        <mat-hint>Choose the doctor you want to search for</mat-hint>
       </mat-form-field>
     </div>
     <div class="row" style="margin-top: 10%; margin-left: 15%">

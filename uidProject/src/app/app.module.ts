@@ -21,6 +21,7 @@ import {MatInputModule} from '@angular/material/input';
 import {MapComponent} from './map/map.component';
 import {AgmCoreModule} from '@agm/core';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { EmergencyComponent } from './emergency/emergency.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
@@ -79,6 +80,10 @@ const appRoutes: Routes = [
     component: AppointmentComponent
   },
   {
+    path: 'settings',
+    component: SettingsPageComponent
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
@@ -99,6 +104,7 @@ const appRoutes: Routes = [
     ReviewComponent,
     MapComponent,
     AppointmentComponent,
+    SettingsPageComponent,
     EmergencyComponent
   ],
   imports: [

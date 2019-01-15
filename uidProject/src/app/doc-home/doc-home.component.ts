@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ElementRef} from '@angular/core';
 import {InfoService} from '../service/info.service';
 
 @Component({
@@ -11,7 +11,10 @@ export class DocHomeComponent implements OnInit {
   patients: string[];
   doc: string;
 
-  constructor(private info: InfoService) {
+  constructor(private info: InfoService,private elementRef: ElementRef) {
+  }
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'white';
   }
 
   ngOnInit() {

@@ -47,6 +47,9 @@ h1{
     width:15%;
     
 }
+.buttonClr:hover{
+	background-color:red;
+}
 .myButton:active {
 	position:relative;
 	top:1px;
@@ -62,6 +65,7 @@ h1{
 }	
 .flexi{
 	flex-direction:row;
+	background-color:#353740;
 }
 .spacing-up{
 	margin-bottom:100px;
@@ -121,4 +125,7 @@ footer{
 div{
 	width:1200px;
 	margin:0px auto;
+}
+img{
+	margin-top: 50px;
 }

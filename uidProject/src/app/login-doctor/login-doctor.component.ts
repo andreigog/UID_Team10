@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ElementRef} from '@angular/core';
 import {InfoService} from '../service/info.service';
 import {Router} from '@angular/router';
 
@@ -9,7 +9,7 @@ import {Router} from '@angular/router';
 })
 export class LoginDoctorComponent implements OnInit {
 
-  constructor(private info: InfoService, private route: Router) {
+  constructor(private info: InfoService, private route: Router,private elementRef: ElementRef) {
   }
 
   doc: string;
@@ -19,8 +19,7 @@ export class LoginDoctorComponent implements OnInit {
   }
 
   ngAfterViewInit() {
-    // this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'yourColor';
-    window.document.body.style.backgroundColor = '#353740';
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#353740';
   }
 
   login() {

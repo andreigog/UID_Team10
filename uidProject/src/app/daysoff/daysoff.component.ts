@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-daysoff',
@@ -6,17 +7,21 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./daysoff.component.css']
 })
 export class DaysoffComponent implements OnInit {
+  private selectFormControl: FormControl;
   days: number[];
   date: number;
   comment: string;
   done: boolean;
   err: boolean;
   message: string;
+  selectedDate:any;
+  selectedDate2:any;
 
   constructor() {
   }
 
   ngOnInit() {
+    this.selectFormControl = new FormControl('', Validators.required);
     this.done = false;
     this.err = false;
     this.date = 0;
@@ -29,15 +34,29 @@ export class DaysoffComponent implements OnInit {
 
   onEnter(com: string) {
     this.comment = com;
-    if (this.date === 0) {
+    if (this.selectedDate ==null) {
       this.err = true;
       this.done = false;
       this.message = 'You must select a day from the calendar by clicking it!';
     } else {
       this.done = true;
       this.err = false;
-      this.message = 'Your day off : ' + this.date + ' of August has been requested. Comment: ' + this.comment;
+      this.message ="Interval selected for your days off is from " +this.formatDate(this.selectedDate) + " to " + this.formatDate(this.selectedDate2)+ " Comment:" + this.comment;
     }
+  }
+  formatDate(date) {
+    var monthNames = [
+      "January", "February", "March",
+      "April", "May", "June", "July",
+      "August", "September", "October",
+      "November", "December"
+    ];
+  
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+  
+    return day + ' ' + monthNames[monthIndex] + ' ' + year;
   }
 
 }

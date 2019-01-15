@@ -2,19 +2,19 @@
 <div class="topnav">
   <img src="assets/inima.png" width= "10%"alt="Flowers in Chania">
   <span class="dimension">View Monitored Data For Patient</span> 
-  <select (change)="choose($event)">
-    <option *ngFor="let p of patients" value="{{p}}" >{{p}}</option>
-  </select>
+  <select class="styled-select blue semi-square" (change)="choose($event)">
+      <option selected="selected">
+          Select a patient to monitor
+          </option>
+      <option *ngFor="let p of patients" value="{{p}}" >{{p}}</option>
+    </select>
 </div>
 </div>
-<br>
-<br>
   <div class="row">
   <div class="col-sm-4">
     <div>
       <span class="fields">{{patientName}}</span>
     </div>
-  <br><br>
   <div>
     <span class="fields">Beats per minute:</span>
     <input class="center" [(ngModel)]="beatsValue" placeholder="Beats/min"/> 

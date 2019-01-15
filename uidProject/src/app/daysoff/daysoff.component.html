@@ -3,71 +3,27 @@
   <span class="dimension">Select your days off!</span>
 </div>
 
-<div class="modal-body row">
-  <div class="col-md-6">
-    <div class="calen">
+<div class="row">
+      <div class="col-md-6">
+          <div class="labelStyle2">Select interval</div>
+          <div>
+            <div><label class="labelStyle">Start date</label></div>
 
-      <div class="month">
-        <ul>
-          <li class="prev">&#10094;</li>
-          <li class="next">&#10095;</li>
-          <li>
-            August<br>
-            <span style="font-size:18px">2017</span>
-          </li>
-        </ul>
+          <input [(ngModel)]="selectedDate" [matDatepicker]="myDatepicker">
+          <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+          <mat-datepicker #myDatepicker></mat-datepicker>
+          </div>
+          <div>
+            <div><label class="labelStyle">End date</label></div>
+            <input [(ngModel)]="selectedDate2" [matDatepicker]="myDatepicker2">
+            <mat-datepicker-toggle [for]="myDatepicker2"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker2></mat-datepicker>
+            </div>
       </div>
-
-      <ul class="weekdays">
-        <li>Mo</li>
-        <li>Tu</li>
-        <li>We</li>
-        <li>Th</li>
-        <li>Fr</li>
-        <li>Sa</li>
-        <li>Su</li>
-      </ul>
-
-      <ul class="days">
-        <!--<li>{{d}}</li>-->
-        <li (click)="choose(1)">1</li>
-        <li (click)="choose(2)">2</li>
-        <li (click)="choose(3)">3</li>
-        <li (click)="choose(4)">4</li>
-        <li (click)="choose(5)">5</li>
-        <li (click)="choose(6)">6</li>
-        <li (click)="choose(7)">7</li>
-        <li (click)="choose(8)">8</li>
-        <li (click)="choose(9)">9</li>
-        <li (click)="choose(10)"><span class="active">10</span></li>
-        <li (click)="choose(11)">11</li>
-        <li (click)="choose(12)">12</li>
-        <li (click)="choose(13)">13</li>
-        <li (click)="choose(14)">14</li>
-        <li (click)="choose(15)">15</li>
-        <li (click)="choose(16)">16</li>
-        <li (click)="choose(17)">17</li>
-        <li (click)="choose(18)">18</li>
-        <li (click)="choose(19)">19</li>
-        <li (click)="choose(20)">20</li>
-        <li (click)="choose(21)">21</li>
-        <li (click)="choose(22)">22</li>
-        <li (click)="choose(23)">23</li>
-        <li (click)="choose(24)">24</li>
-        <li (click)="choose(25)">25</li>
-        <li (click)="choose(26)">26</li>
-        <li (click)="choose(27)">27</li>
-        <li (click)="choose(28)">28</li>
-        <li (click)="choose(29)">29</li>
-        <li (click)="choose(30)">30</li>
-        <li (click)="choose(31)">31</li>
-      </ul>
-    </div>
-  </div>
   <div class="col-md-6">
     <div class="row" style="margin-left: 10%; margin-top: 20%">
       <h2>Leave a comment</h2>
-      <input type="text" #box (keyup.enter)="onEnter(box.value)">
+      <input class="mare" type="text" #box (keyup.enter)="onEnter(box.value)">
       <h4><i>*Press Enter to request your day off*</i></h4><br><br>
       <div class="alert alert-success"  *ngIf="done">
         {{message}}

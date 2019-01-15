@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {take} from 'rxjs/operators';  
 import { timer } from 'rxjs';
 import { InfoService } from '../service/info.service';
+import { FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-monitored-data',
@@ -9,6 +10,8 @@ import { InfoService } from '../service/info.service';
   styleUrls: ['./monitored-data.component.css']
 })
 export class MonitoredDataComponent implements OnInit {
+
+  private selectFormControl: FormControl;
 
   @Input() monitored:any = { beatsMin:'',bloodPres:'',nrSteps:''}
 
@@ -28,6 +31,7 @@ export class MonitoredDataComponent implements OnInit {
   patientName: string;
 
   ngOnInit() {
+    this.selectFormControl = new FormControl('', Validators.required);
     this.info.currentMessage.subscribe(message => this.selectedPatient = message);
     this.patients = this.info.patients;
     this.patientNumber = Number(this.selectedPatient);

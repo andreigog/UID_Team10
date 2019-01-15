@@ -21,6 +21,15 @@ import {MatInputModule} from '@angular/material/input';
 import {MapComponent} from './map/map.component';
 import {AgmCoreModule} from '@agm/core';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { EmergencyComponent } from './emergency/emergency.component';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+
+
+import {
+  MatButtonModule, MatCardModule, MatExpansionModule,
+  MatListModule, MatOptionModule, MatSelectModule,
+  MatSnackBarModule
+} from '@angular/material';
 
 const appRoutes: Routes = [
   {
@@ -89,7 +98,8 @@ const appRoutes: Routes = [
     MonitoreddataComponent,
     ReviewComponent,
     MapComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    EmergencyComponent
   ],
   imports: [
     AngularFontAwesomeModule,
@@ -100,8 +110,11 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    MatButtonModule,
     MatFormFieldModule,
+    MatSnackBarModule,
     MatInputModule,
+    MatCheckboxModule,
     AgmCoreModule.forRoot({
       // please get your own API key here:
       // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
@@ -109,7 +122,7 @@ const appRoutes: Routes = [
     }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {
 }

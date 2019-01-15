@@ -1,6 +1,10 @@
 img{
   margin-left: 250px;
 }
+
+mat-checkbox .mat-icon {
+  background: red;
+}
 .myButton {
   -moz-box-shadow: 3px 4px 0px 0px #899599;
   -webkit-box-shadow: 3px 4px 0px 0px #899599;
@@ -108,5 +112,13 @@ p{
   font-family: Arial;
 }
 #lgn{
-  margin-left: 270px;
+  margin-left: 370px;
+}
+
+#checkBox{
+  margin-left: 340px;
+}
+
+#lgnBttn{
+  margin-left: 55px;
 }

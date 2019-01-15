@@ -1,12 +1,23 @@
 <img src="assets/whht.png">
 <br><br><br>
 <div id="lgn">
-  <b>Username:</b> <input><br><br>
-  <b>Password:</b> <input><br><br>
-  <button class="myButton">Login</button>
-  <br><br><br><br><br>
+  <mat-form-field>
+    <input matInput placeholder="Username" [(ngModel)]="username">
+  </mat-form-field>
+  <br>
+  <br>
+  <mat-form-field>
+    <input matInput placeholder="Password" type="password" [(ngModel)]="password">
+  </mat-form-field>
+  <br>
+  <br>
+  <button id="lgnBttn" mat-raised-button (click)="login()">
+    Login
+  </button>
+  <br><br>
 </div>
-<button class="myButton2">Emergency</button><br><br>
-<p>I am aware of the terms and conditions by
-  pressing this button</p>
 
+<button (click)="emergency()" class="myButton2">Emergency</button><br><br>
+<mat-checkbox color="warn" id="checkBox" [checked]="isAccepted()" (click)="toggleCheck()">
+  Accept terms and conditions
+</mat-checkbox>

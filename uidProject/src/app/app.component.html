@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav *ngIf="showNavbar" class="navbar navbar-inverse">
   <div class="container-fluid">
     <ul class="nav navbar-nav" routerLinkActive="active">
       <li class="nav-item"><a class="nav-link" routerLink="docHome">DoctorHome</a></li>
@@ -19,6 +19,9 @@
       </li>
       <li  class="nav-item">
         <a class="nav-link" routerLink="appointment">Make Appointment</a>
+      </li>
+      <li  class="nav-item">
+        <a class="nav-link" (click)="logout()">Logout</a>
       </li>
     </ul>
   </div>

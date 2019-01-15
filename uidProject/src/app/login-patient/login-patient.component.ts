@@ -45,7 +45,7 @@ export class LoginPatientComponent implements OnInit {
 
   openSnackBar(message: string, action: string) {
     this.snackBar.open(message, action, {
-      duration: 2000,
+      duration: 3000,
       direction: 'ltr',
       horizontalPosition: 'center',
       verticalPosition: 'bottom'

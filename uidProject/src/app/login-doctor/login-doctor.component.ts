@@ -46,4 +46,8 @@ export class LoginDoctorComponent implements OnInit {
       verticalPosition: 'bottom'
     });
   }
+
+  serus() {
+    this.route.navigate(['/loginPatient']);
+  }
 }

@@ -1,6 +1,6 @@
-import {Component, OnInit} from '@angular/core';
-import { MatSnackBar } from '@angular/material';
-import { Router } from '@angular/router';
+import {Component, ElementRef, OnInit} from '@angular/core';
+import {MatSnackBar} from '@angular/material';
+import {Router} from '@angular/router';
 import {MatButtonModule} from '@angular/material/button';
 
 @Component({
@@ -16,7 +16,8 @@ export class LoginPatientComponent implements OnInit {
 
   constructor(
     private router: Router, // page routing system - navigation (after correcet credentials for login -> home)
-    private snackBar: MatSnackBar) {
+    private snackBar: MatSnackBar,
+    private elementRef: ElementRef) {
   }
 
   ngOnInit() {
@@ -24,8 +25,12 @@ export class LoginPatientComponent implements OnInit {
     this.password = '';
   }
 
-  emergency(){
-    if (!this.isAccepted()){
+  ngAfterViewInit() {
+    this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = 'white';
+  }
+
+  emergency() {
+    if (!this.isAccepted()) {
       this.openSnackBar('Your emergency has been registered. A medical care team will arrive soon at your location.', '');
     } else {
       this.openSnackBar('Please accept the terms and conditions!', '');

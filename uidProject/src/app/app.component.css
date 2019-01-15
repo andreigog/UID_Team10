@@ -27,4 +27,5 @@ li a:hover {
 }
 .dim{
   font-size:175%;
+  cursor: pointer;
 }

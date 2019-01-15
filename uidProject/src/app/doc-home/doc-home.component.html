@@ -12,9 +12,11 @@
 
   <table>
     <tbody>
-    <tr *ngFor="let u of patients">
-      <td>{{u}}<button class="button" (click)="examine(u)">Examine</button></td>
-    </tr>
+        <ng-container *ngFor="let patient of patients">
+            <tr  [ngStyle]="{'background-color':patient.color}" >
+               <td >{{patient.name}}<button class="button" (click)="examine(patient.name)">Examine</button></td>
+            </tr>
+         </ng-container>
     </tbody>
   </table>
 </div>

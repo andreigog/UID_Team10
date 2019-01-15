@@ -39,7 +39,7 @@ table {
   width: 50%;
 }
 td:hover {
-  background-color: plum;
+  background-color: lightgrey;
   color: #000000;
 }
 td, th {
@@ -51,7 +51,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color: #dddddd;
+  background-color: #ac7878;
 }
 .spacing{
   margin-top: 10%;

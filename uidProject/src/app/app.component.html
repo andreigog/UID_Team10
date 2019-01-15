@@ -2,31 +2,31 @@
 
 <nav *ngIf="showNavbar" class="navbar navbar-inverse">
   <div class="container-fluid">
-    <ul class="nav navbar-nav" routerLinkActive="active">
-      <li *ngIf="userRole=='doctor'" class="nav-item"><a class="nav-link" routerLink="docHome">DoctorHome</a></li>
+    <ul class="nav navbar-nav mr-auto" routerLinkActive="active">
+      <li *ngIf="userRole=='doctor'" class="nav-item"><a class="nav-link dim" routerLink="docHome">DoctorHome</a></li>
       <li *ngIf="userRole=='doctor'" class="nav-item">
-        <a class="nav-link" routerLink="daysoff">Days Off</a>
+        <a class="nav-link dim"  routerLink="daysoff">Days Off</a>
       </li>
       <li *ngIf="userRole=='doctor'" class="nav-item">
-        <a class="nav-link" routerLink="report">Appointment Report</a>
+        <a class="nav-link dim" routerLink="report">Appointment Report</a>
       </li>
       <li *ngIf="userRole=='doctor'" class="nav-item">
-        <a class="nav-link" routerLink="monitoredData">Monitored Data</a>
+        <a class="nav-link dim" routerLink="monitoredData">Monitored Data</a>
       </li>
       <li *ngIf="userRole=='patient'" class="nav-item">
-        <a class="nav-link" routerLink="review">Review your doctor</a>
+        <a class="nav-link dim" routerLinkActive="active" routerLink="review">Review your doctor</a>
       </li>
       <li  *ngIf="userRole=='patient'" class="nav-item">
-        <a class="nav-link" routerLink="map">Hospitals Map</a>
+        <a class="nav-link dim" routerLink="map">Hospitals Map</a>
       </li>
       <li *ngIf="userRole=='patient'"  class="nav-item">
-        <a class="nav-link" routerLink="appointment">Make Appointment</a>
+        <a class="nav-link dim" routerLink="appointment">Make Appointment</a>
       </li>
       <li  class="nav-item">
-        <a class="nav-link" (click)="logout()">Logout</a>
+        <a class="nav-link dim" (click)="logout()">Logout</a>
       </li>
       <li  class="nav-item">
-        <a class="nav-link" routerLink="settings"><i class="fas fa-cog"></i> Settings</a>
+        <a class="nav-link dim" routerLink="settings"><i class="fas fa-cog"></i> Settings</a>
       </li>
     </ul>
   </div>

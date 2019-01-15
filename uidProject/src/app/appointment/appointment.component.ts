@@ -20,11 +20,16 @@ export class AppointmentComponent implements OnInit {
   done: boolean;
   date: number;
   message: string;
+  selectedDate:Date;
+  hours:string[];
+  selectedHour:any;
+  hour:any;
 
   constructor(private info: InfoService) {
   }
 
   ngOnInit() {
+    this.hours=['12 AM',"1 PM","2 PM","3 PM","4 PM","5 PM","6 PM"]
     this.selected = false;
     this.done = false;
     this.temp = 0;
@@ -34,6 +39,7 @@ export class AppointmentComponent implements OnInit {
   }
 
   chooseDoc(event: any) {
+    console.log(event.target.value);
     this.doc = event.target.value;
     this.temp += 1;
     console.log(this.doc.toString());
@@ -57,13 +63,30 @@ export class AppointmentComponent implements OnInit {
   }
 
   makeapp() {
+    console.log(this.doc);
+    this.temp=3;
     if (this.temp !== 3) {
       this.selected = true;
       this.message = 'Please complete all the fields in order to make your appointment!';
     } else {
-      this.message = 'Your appointment: for dr. ' + this.doc.substring(2, this.doc.length) + ' (' + this.dom + ') on ' + this.date + ' of August ';
+      this.message = 'Your appointment: for dr. ' + this.doc+ ' (' + this.dom + ') on ' + this.formatDate(this.selectedDate) + ' at '+ this.hour;
     }
   }
+  formatDate(date) {
+    var monthNames = [
+      "January", "February", "March",
+      "April", "May", "June", "July",
+      "August", "September", "October",
+      "November", "December"
+    ];
+  
+    var day = date.getDate();
+    var monthIndex = date.getMonth();
+    var year = date.getFullYear();
+  
+    return day + ' ' + monthNames[monthIndex] + ' ' + year;
+  }
+  
 
   reloadPage() {
     window.location.reload();

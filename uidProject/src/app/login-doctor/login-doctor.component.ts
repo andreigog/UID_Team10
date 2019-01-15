@@ -30,7 +30,7 @@ export class LoginDoctorComponent implements OnInit {
     this.info.docUser = this.doc;
     if (this.username === 'mockDoc' && this.password === 'mockPass') {
         this.openSnackBar('Login successful!', '');
-        localStorage.setItem('username', this.doc);
+        localStorage.setItem('username', this.username);
         localStorage.setItem('userRole', 'doctor');
         this.route.navigate(['/docHome']);
       } else {

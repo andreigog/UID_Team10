@@ -21,7 +21,7 @@ export class DocHomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.doc = this.info.docList[0].name;
+    this.doc = localStorage.getItem("username");
     this.patients = [
       'John Doe', 'Harry Potter', 'Jane Doe', 'Ionica Tedica', 'Ioshka Patroshka', 'Cutie Patootie'
     ];

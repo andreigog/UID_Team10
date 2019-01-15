@@ -24,11 +24,12 @@ import { AppointmentComponent } from './appointment/appointment.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { EmergencyComponent } from './emergency/emergency.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
-
+import { DlDateTimePickerDateModule } from 'angular-bootstrap-datetimepicker';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import {
   MatButtonModule, MatCardModule, MatExpansionModule,
-  MatListModule, MatOptionModule, MatSelectModule,
+  MatListModule, MatOptionModule, MatSelectModule,MatNativeDateModule,
   MatSnackBarModule
 } from '@angular/material';
 
@@ -113,7 +114,6 @@ const appRoutes: Routes = [
     AppRoutingModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
@@ -121,13 +121,16 @@ const appRoutes: Routes = [
     MatSnackBarModule,
     MatInputModule,
     MatCheckboxModule,
+    DlDateTimePickerDateModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     AgmCoreModule.forRoot({
       // please get your own API key here:
       // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
       apiKey: 'AIzaSyBLIjjbs8HVnGM2nxmngm6Rcx-soUgWsks'
     }),
   ],
-  providers: [],
+  providers: [FormsModule],
   bootstrap: [AppComponent],
 })
 export class AppModule {

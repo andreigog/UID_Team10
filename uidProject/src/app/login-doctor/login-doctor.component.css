@@ -39,12 +39,13 @@ h1{
 .buttonClr{
 	background-color:#ff3300;
 	border: none;
-	height:30px;
+	height:40px;
 	width: 100px;
     margin-top:40px;
     cursor: pointer;
     color:white;
-    width:15%;
+	width:15%;
+	font-size:15px;
     
 }
 .buttonClr:hover{
@@ -61,7 +62,8 @@ h1{
 #username{
 	margin-bottom: 20px;
 	width: 15%;
-	height:20px;
+	height:30px;
+	font-size:15px;
 }	
 .flexi{
 	flex-direction:row;
@@ -72,7 +74,8 @@ h1{
 }
 #password{
 	width: 15%;
-	height: 20px;
+	height:30px;
+	font-size:15px;
 }
 .spacing{
 	margin-left:100px;

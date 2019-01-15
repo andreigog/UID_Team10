@@ -4,91 +4,58 @@
 </div>
 <div class="modal-body row">
   <div class="col-md-6">
-    <div class="calen">
+      <!-- <dl-date-time-picker
+      startView="day"
+      maxView="year"
+      minView="minute"
+      minuteStep="5"
+      [(ngModel)]="selectedDate"
+  >
+  </dl-date-time-picker> -->
+  
 
-      <div class="month">
-        <ul>
-          <li class="prev">&#10094;</li>
-          <li class="next">&#10095;</li>
-          <li>
-            August<br>
-            <span style="font-size:18px">2017</span>
-          </li>
-        </ul>
-      </div>
-
-      <ul class="weekdays">
-        <li>Mo</li>
-        <li>Tu</li>
-        <li>We</li>
-        <li>Th</li>
-        <li>Fr</li>
-        <li>Sa</li>
-        <li>Su</li>
-      </ul>
-
-      <ul class="days">
-        <!--<li>{{d}}</li>-->
-        <li (click)="choose(1)">1</li>
-        <li (click)="choose(2)">2</li>
-        <li (click)="choose(3)">3</li>
-        <li (click)="choose(4)">4</li>
-        <li (click)="choose(5)">5</li>
-        <li (click)="choose(6)">6</li>
-        <li (click)="choose(7)">7</li>
-        <li (click)="choose(8)">8</li>
-        <li (click)="choose(9)">9</li>
-        <li (click)="choose(10)"><span class="active">10</span></li>
-        <li (click)="choose(11)">11</li>
-        <li (click)="choose(12)">12</li>
-        <li (click)="choose(13)">13</li>
-        <li (click)="choose(14)">14</li>
-        <li (click)="choose(15)">15</li>
-        <li (click)="choose(16)">16</li>
-        <li (click)="choose(17)">17</li>
-        <li (click)="choose(18)">18</li>
-        <li (click)="choose(19)">19</li>
-        <li (click)="choose(20)">20</li>
-        <li (click)="choose(21)">21</li>
-        <li (click)="choose(22)">22</li>
-        <li (click)="choose(23)">23</li>
-        <li (click)="choose(24)">24</li>
-        <li (click)="choose(25)">25</li>
-        <li (click)="choose(26)">26</li>
-        <li (click)="choose(27)">27</li>
-        <li (click)="choose(28)">28</li>
-        <li (click)="choose(29)">29</li>
-        <li (click)="choose(30)">30</li>
-        <li (click)="choose(31)">31</li>
-      </ul>
-    </div>
+  <input [(ngModel)]="selectedDate" [matDatepicker]="myDatepicker">
+  <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+  <mat-datepicker #myDatepicker></mat-datepicker>
+  <mat-form-field>
+      <mat-label>Select an hour (required)</mat-label>
+      <h3><select placeholder="Hour" matNativeControl required [formControl]="selectFormControl" [(ngModel)]="hour">
+        <option value="" disabled selected>Hours</option>
+        <option *ngFor="let hour of hours" value="{{hour}}">{{hour}}</option>
+      </select></h3>
+      <mat-error *ngIf="selectFormControl.hasError('required')">
+        This field is required
+      </mat-error>
+      <mat-hint>Choose the domain of the chosen doctor</mat-hint>
+    </mat-form-field>
   </div>
   <div class="col-md-6">
     <div class="row" style="margin-left: 15%">
-      <mat-form-field>
-        <mat-label>Select a doctor (required)</mat-label>
-        <h3><select placeholder="Doctors" matNativeControl required [formControl]="selectFormControl" (change)="chooseDoc($event)">
-          <option value="" disabled selected>Doctors</option>
-          <option *ngFor="let p of docs" value="{{p}}">{{p.name}}</option>
-        </select></h3>
-        <mat-error *ngIf="selectFormControl.hasError('required')">
-          This field is required
-        </mat-error>
-        <mat-hint>Choose the doctor you want to search for</mat-hint>
-      </mat-form-field>
+        <mat-form-field>
+            <mat-label>Select a domain (required)</mat-label>
+            <h3><select placeholder="Domain" matNativeControl required [formControl]="selectFormControl" (change)="chooseDom($event)">
+              <option value="" disabled selected>Domains</option>
+              <option *ngFor="let d of domains" value="{{d}}">{{d}}</option>
+            </select></h3>
+            <mat-error *ngIf="selectFormControl.hasError('required')">
+              This field is required
+            </mat-error>
+            <mat-hint>Choose the domain of the chosen doctor</mat-hint>
+          </mat-form-field>
     </div>
     <div class="row" style="margin-left: 15%; margin-top: 10%">
-      <mat-form-field>
-        <mat-label>Select a domain (required)</mat-label>
-        <h3><select placeholder="Domain" matNativeControl required [formControl]="selectFormControl" (change)="chooseDom($event)">
-          <option value="" disabled selected>Domains</option>
-          <option *ngFor="let d of domains" value="{{d}}">{{d}}</option>
-        </select></h3>
-        <mat-error *ngIf="selectFormControl.hasError('required')">
-          This field is required
-        </mat-error>
-        <mat-hint>Choose the domain of the chosen doctor</mat-hint>
-      </mat-form-field>
+        <mat-form-field>
+            <mat-label>Select a doctor (required)</mat-label>
+            <h3><select placeholder="Doctors" matNativeControl required [formControl]="selectFormControl" (change)="chooseDoc($event)">
+              <option value="" disabled selected>Doctors</option>
+              <option *ngFor="let p of docs" value="{{p.name}}">{{p.name}}</option>
+            </select></h3>
+            <mat-error *ngIf="selectFormControl.hasError('required')">
+              This field is required
+            </mat-error>
+            <mat-hint>Choose the doctor you want to search for</mat-hint>
+          </mat-form-field>
+      
     </div>
     <div class="row" style="margin-top: 10%; margin-left: 15%">
       <button class="btn btn-success" (click)="makeapp()" data-toggle="modal" data-target="#exampleModal">Save</button>
